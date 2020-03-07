@@ -1,21 +1,3 @@
-<?php
-session_start();
-$password=$_SESSION["password"];
-if(empty($password)){
-       header("location: login.php");
-       exit();
-	}else{
-if ($_SESSION["password"] == "460v")
-	{
-	}
-	else
-	{
-		header("location: login.php");
-        exit();
-    }
-	}
-?>
-
 <html>
 <head>
   <title>Manish Patel</title>
@@ -102,10 +84,12 @@ font-weight:700;
 padding:5px;
 }
 .pr{
-	font-size:30px;
+	font-size:35px;
 	color:darkorange;
-	padding:40px;
+	padding:20px;
 	text-align:center;
+	margin-top:30px;
+	font-weight:700;
 }
 .explore-img{
 	text-align:center;
@@ -115,28 +99,22 @@ width:130px;
 height:130px;
 }
 .pr-p{
-	color:grey;
-	margin-left:10px;
-}
-.into-img{
-text-align:center;
+	color:black;
+	margin-left:20px;
 }
 .into-img img{
-text-align:center;
-width:200px;
-height:80px;
-margin-left:15px;
+width:220px;
+height:120px;
+margin-left:35px;
 }
 
 .morgaon-heading{
 	color:black;
 	font-size:20px;
-	margin-left:10px;
 }
 .morgaon-description{
 	color:grey;
 	font-size:14px;
-	margin-left:15px;
 }
 </style>
 </head>
@@ -159,7 +137,7 @@ Categories
    <li class="divider"></li>
    <li><a class="dropdown-item" href="entertainment.php">Entertainment</a></li>
    <li class="divider"></li>
-   <li><a class="dropdown-item" href="feedback.php">Feedback</a></li>
+   <li><a class="dropdown-item" href="index.html">Home</a></li>
 
  
 </ul>
@@ -167,56 +145,41 @@ Categories
 </header>
 <div class="container">
     <div class="row">
-	    <div class="col-sm-6">
-	        <h1 class="pr">Projects</h1>
-		</div>
-		<div class="col-sm-6">
-		<div class="explore-img">
-                <img class="into-img" src="images/psp.jpg">
-		 </div>
-		</div>
+         <img class="img-fluid" src="images/prjt.png">
     </div>
-	<hr style="border:2px solid orange;">
 	
 	<div class="row">
-	    <div class="col-sm-6">
-		    <p class="pr-p">Some Projects That have been taken and completed by me :
+		    <p class="pr-p">I have done some project individual to 
+			use and demonstrate my knowledge and skills.<br>
+			I always want to make a problem solver project, 
+			which can help to solve and improve qualities of the products.<br>
+			
+			I hope you will like the projects. Thank You!</p>
 		</div>
-		<div class="col-sm-6">
-		    <b><ul>
-			<li> Mor Gaon - My Evillage</li>
+		<div class="row">
+		    <b>
+			<ol>
+			<li> Mor Gaon - My Evillage  ( <a href="morgaon/home.php">Click To See Demo</a> )</li>
             <li> Multipurpose Electronic Kit</li>
-            <li> MKPATEL - The Intro.</li>
-			</ul></b>
+			</ol>
+			</b>
 		</div>
-    </div>
+    
 	<hr>
     <div class="row">
-	    <p class="morgaon-heading">1. <b> Mor Gaon - My Evillage</b></p>
-		<p class="morgaon-description">Aim :<br><br>We want to connect all the villages with each other through technology.<br>
-
-Our only purpose to make this forum is to make people aware of all the events and facilities in the village.<br>
-
-The facilities given by us are as follows :<br>
-
-1. Information about the village.<br>
-2. The space to put their point and information online.<br>
-3. Information about the public places of the village.<br>
-4. Cooperate to give them information about their public places.<br>
-5. Provides a place to upload their events and info about something happened in village.<br>
-6. Help everyone to know about every village, in which they might go.<br>
-7. Help villagers to know about the facilities of the technology.<br>
-8. Provides the user based content.<br>
-9. Help users to provide a valuable content in village.<br>
-10. Provide the info of population of the village in Male , Female categories.<br>
-11. Provides the user profile service in which they can change their info easily.<br>
-12. Help shopkippers to provide their necessary information to all the village people.<br>
-13. Provide a space to share the difficulties in village and what need to done in village by the government.<br>
+	    <h3  style="font-weight:700;color:purple;margin-left:10px;padding:5px;">
+		Mor Gaon - My Evillage
+		</h3>
+		<p style="color:grey;margin-left:40px;">
+		Aim Of the Project - <span style="color:black;">Connect all the villages with each other through technology.</span><br><br>
+        It is a website which provides the facility to share the activities of village like events, what happpening in village  etc.
+		It providse realtime news of the villages.
+		it is also provide the users 'profile management facility' like create, update and upload their information on site.  ( <a href="morgaon/home.php">Click To See Demo</a> )
 </p>
 </div>
 <div class="row">
 		<div class="into-img">
-        <img src="images/morgaonproject.jpeg">
+        <img class="img-thumbnail" src="images/morgaonproject.jpeg">
 		</div>
     </div>
 	<hr>
