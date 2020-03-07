@@ -1,21 +1,3 @@
-<?php
-session_start();
-$password=$_SESSION["password"];
-if(empty($password)){
-       header("location: login.php");
-       exit();
-	}else{
-if ($_SESSION["password"] == "440v")
-	{
-	}
-	else
-	{
-		header("location: login.php");
-        exit();
-    }
-	}
-?>
-
 <html>
 <head>
   <title>Manish Patel</title>
@@ -74,6 +56,7 @@ header{
 }
 .row{
     margin-top:10px;
+}
 .btn{
     font-size:12px;
     font-weight:700;
@@ -83,35 +66,6 @@ header{
 {
 	color:green;
 }
-</style>
-</head>
-<body>
-<header>
-<div class="header-img">
-<img src="images/mp.jpg"> &nbsp;MKPATEL
-</div>
-<div class="header-content">
-<button id="category" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
-Categories
-</button>
-<ul class="dropdown-menu">         
-
-   <li><a class="dropdown-item" href="projects.php">My Projects</a></li>
-   <li class="divider"></li>
-   <li><a class="dropdown-item" href="applications.php">My Application</a></li>
-   <li class="divider"></li>
-   <li><a class="dropdown-item" href="tips.php">Tips</a></li>
-   <li class="divider"></li>
-   <li><a class="dropdown-item" href="entertainment.php">Entertainment</a></li>
-   <li class="divider"></li>
-   <li><a class="dropdown-item" href="feedback.php">Feedback</a></li>
-
- 
-</ul>
-</div>
-</header>
-
-<style>
 .btn{
     font-size:12px;
     font-weight:700;
@@ -119,38 +73,37 @@ Categories
 }
 .heading
 {
-	color:darkorange;
+	color:#c97c00;
 	font-size:30px;
 	padding:8px;
 }
 .heading_info
 {
 	color:grey;
-	font-size:13px;
-	padding:8px;
+	font-size:14px;
+	margin-left:20px;
 }
-.sub_heading
+.sub_info_row p
 {
 	color:#034214;
 	font-size:17px;
 	font-weight:700;
-	padding:6px;
-	background:orange;
-	border-radius:8px;
+	background:grey;
+	border-radius:3px;
+	padding:5px; 
+	color:white;
 }
 .sub_info_row
 {
+	width:100%;
 	margin-top:10px;
-	margin-left:50px;
-	margin-right:5px;
 }
 .sub_headind_info_first
 {
-	text-align:center;
-	color:darkorange;
+	color:grey;
 	font-weight:700;
-	margin-left:15px;
-	margin-right:15px;
+	padding:10px;
+    font-size:18px;
 }
 .sub_headind_info
 {
@@ -178,26 +131,67 @@ text-style:none;
 color:white;
 font-weight:700;
 }
+.into-img img{
+width:160px;
+height:170px;
+}
+.into-img{
+text-align:center;
+}
 </style>
+</head>
+<body>
+<header>
+<div class="header-img">
+<img src="images/mp.jpg"> &nbsp;MKPATEL
+</div>
+<div class="header-content">
+<button id="category" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
+Categories
+</button>
+<ul class="dropdown-menu">         
+
+   <li><a class="dropdown-item" href="projects.php">My Projects</a></li>
+   <li class="divider"></li>
+   <li><a class="dropdown-item" href="applications.php">My Application</a></li>
+   <li class="divider"></li>
+   <li><a class="dropdown-item" href="tips.php">Tips</a></li>
+   <li class="divider"></li>
+   <li><a class="dropdown-item" href="entertainment.php">Entertainment</a></li>
+   <li class="divider"></li>
+   <li><a class="dropdown-item" href="index.html">Home</a></li>
+
+ 
+</ul>
+</div>
+</header>
 <div class="container" id="hide">
     <div class="row">
 	    <div class="col-sm-6">
 		<h1 class="heading">Manish Patel</h1>
+		<p class="heading_info">
+		LinkedIn : <a href="https://www.linkedin.com/in/manish-patel-mkp/" style="text-style:none;color:grey;">https://www.linkedin.com/in/manish-patel-mkp</a><br>
+		Email : manishkp399@gmail.com<br>
+		Phone : +91 62645 15763<br>
+		</p>
 		</div>
-		<div class="col-sm-6">
-		<p class="heading_info">Email : manishkp399@gmail.com<br>
-		Phone : +91 62645 15763</p>
+		<div class="col-sm-6 ">
+		<div class="into-img">
+		<img src="images/mkp.jpg">
+		</div>
 		</div>
     </div>
-	<hr style="border-radius:2x solid grey;">
-	<div class="row">
+	<hr style="border:2px solid grey;">
+	<div class="row justify-content-center">
 	<p class="sub_headind_info_first">I just want to provide the world <b style="color:darkorange">valuable products and services</b> for environment and human help.
 	</p>
 	</div>
-	<hr>
+	<hr style="border:2px solid grey;">
 	<div class="row">
 	<div class="sub_info_row">
-	<p class="sub_heading">Education :</p>
+	<p>Education :</p>
+	</div>
+	<div class="sub_headind_info">
 	<p class="sub_headind_info">&nbsp; &nbsp; &nbsp; I have taken following educations:
 	<ul class="sub_headind_info">
         <li> High School Ceriticate Exam 2016 - Pass - 93.50% .</li>
@@ -207,60 +201,62 @@ font-weight:700;
 	</p>
 	</div>
 	</div>
-	<hr>
 	<div class="row">
 	<div class="sub_info_row">
-	<p class="sub_heading">Trainings & Certificates :</p>
-	<ul class="sub_headind_info">
+	<p>Trainings & Certificates :</p>
+	</div>
+	<div class="sub_headind_info">
+	<ul>
         <li> IoT - IndEyes Company - August 2019.</li>
         <li> PCB Designing And Processing - IndEyes- January 2020.</li>
-        <li> Sanskriti Gyan Pariksha - 2015.</li>
-		<li> Pratibha Samman Samaroh Saja - 2018.</li>
     </ul>
 	</div>
 	</div>
-	<hr>
 	<div class="row">
 	<div class="sub_info_row">
-	<p class="sub_heading">Skills :</p>
-	<ul class="sub_headind_info">
-        <li> Website Development : <br>Language Known:<br> 1. PHP, <br>2. JAVASCRIPT, <br>3. CSS, <br>4. HTML, <br>5. AJAX. </li>
-        <li> Creating Miner Programms Using C & C++ .</li>
-        <li> Knowledge of M.S. Office Application.</li>
+	<p>Skills :</p>
+	</div>
+	<div class="sub_headind_info">
+	<ul>
+        <li> Website Development : <br>Language Known:<br> PHP<br> MySQL<br> JAVASCRIPT<br> CSS<br> HTML<br> AJAX</li>
+        <li> Create Miner Programms Using C & C++ .</li>
 		<li> Blogging.</li>
     </ul>
 	</div>
 	</div>
-	<hr>
 	<div class="row">
 	<div class="sub_info_row">
-	<p class="sub_heading">Projects :</p>
-	<p class="sub_headind_info">&nbsp; &nbsp; &nbsp; Projects that have been created only by me :
-	<ul class="sub_headind_info">
-        <li> Mor Gaon - My Evillage</li>
+	<p>Projects :</p>
+	</div>
+	<div class="sub_headind_info">
+	<p>&nbsp; &nbsp; &nbsp; Projects that have been created only by me :
+	<ul>
+        <li> Mor Gaon - My Evillage ( <a href="morgaon/home.php">Click To See Demo</a> )</li>
         <li> Multipurpose Electronic Kit</li>
         <li> MKPATEL - The Intro.</li>
     </ul>
 	</p>
 	</div>
 	</div>
-	<hr>
 	<div class="row">
 	<div class="sub_info_row">
-	<p class="sub_heading">Languages Known :</p>
-	<ul class="sub_headind_info">
+	<p>Languages Known :</p>
+	</div>
+	<div class="sub_headind_info">
+	<ul>
         <li> English</li>
         <li> Hindi</li>
     </ul>
 	</div>
 	</div>
-	<hr>
 	<div class="row">
 	<div class="sub_info_row">
-	<p class="sub_heading">Personal Details :</p>
-	<p class="sub_headind_info">&nbsp; &nbsp; &nbsp; Manish Patel<br>
-	&nbsp; &nbsp; &nbsp; 433,Gandhi Nagar,32<br>
-	&nbsp; &nbsp; &nbsp; Birgaon, Raipur, C.G.<br>
+	<p>Personal Details :</p>
+	</div>
+	<div class="sub_headind_info">
+	<p>&nbsp; &nbsp; &nbsp; Manish Patel<br>
+	&nbsp; &nbsp; &nbsp; 433,Gandhi Nagar, Ward No. 32<br>
+	&nbsp; &nbsp; &nbsp; Birgaon, Raipur, C.G.(493221)<br>
 	</p>
 	</div>
 	</div>
