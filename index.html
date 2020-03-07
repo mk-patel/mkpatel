@@ -7,7 +7,7 @@
     <meta name="author" content="Manish Patel">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="icon" type="image/png" href="11.png"/>
+    <link rel="icon" type="image/jpg" href="mkp.jpg"/>
 <style>
 body{
 background:white;
@@ -61,14 +61,14 @@ margin-top:10px;
 text-align:center;
 }
 .col-sm-6 img{
-width:160px;
+width:190px;
 height:200px;
 }
 .col-sm-6 h1{
 font-size:20px;
 color:grey;
-padding:25px;
-margin-left:10px;
+padding:5px;
+margin-top:20px;
 }
 #intro-wlcm{
 font-size:12px;
@@ -80,9 +80,14 @@ font-size:30px;
 .intro-p{
 font-size:15px;
 color:grey;
+padding:0px;
+margin-left:30px;
 }
 #into-first-line{
 font-size:14px;
+}
+.intro-more{
+margin-left:30px;
 }
 
 .explore-img{
@@ -132,10 +137,6 @@ font-size:12px;
 font-weight:700;
 padding:5px;
 }
-.explore:hover{
-    background:black;
-	border-radius:10px;
-}
 .explore-img img:hover{
 border:8px solid white;
 border-radius:5px;
@@ -146,6 +147,10 @@ color:black;
 .intro-more a{
 font-size:12px;
 color:grey;
+}
+.box:hover {
+box-shadow:2px 2px 10px 1px rgba(0,0,0,0.3);
+
 }
 </style>
 </head>
@@ -177,19 +182,18 @@ Categories
 <div class="container">
     <div class="row">
 	    <div class="col-sm-6">
-		
-	        <h1><i id="intro-wlcm">Welcome !</i><br> Hi!, I am <b id="name_tag_bold" >Manish Patel</b>.<br>
-			<p class="intro-p"><i id="into-first-line">A simple and curious student,</i><br> 
+	        <h1>Hi! I am <b id="name_tag_bold" >Manish Patel</b>.</h1>
+			<p class="intro-p">A simple and curious student,<br> 
 			who likes to <br>
 			learn, discover and invent<br>
-			problem solving products for human help.</p>
-			<p class="intro-more"><a href="proinfo.php">more info...</a></p>
-            </h1>
-			
+			problem solving products for human help.
+			</p>
+			<p class="intro-more"><a href="proinfo.php"><button class="btn btn-warning">More Info</button></a>
+			</p>
 		</div>
 		<div class="col-sm-6">
 		<div class="into-img">
-        <img class="into-img" src="images/mp.jpg">
+        <img class="into-img" src="images/mkp.jpg">
 		</div>
 		</div>
     </div>
@@ -209,7 +213,9 @@ Categories
 		</div>
     </div>
 	<hr>
+<div class="box">
 	<div class="row">
+	
 	    <div class="col-sm-6">
 		    <div class="explore-img">
                 <img class="into-img" src="images/psp.jpg">
@@ -218,19 +224,21 @@ Categories
 		<div class="col-sm-6">
 		    <p class="explore">My<b id="explore_bold" > Projects </b> and Ideas<br>
 			<p class="explore-p">
-			Know about my projects and work process...<br>
-			<a href="projects.php"><button class="btn btn-primary">Go <<</button></a>
+			Know about my projects and work process...<br><br>
+			<a href="projects.php"><button class="btn btn-warning">Projects and Ideas</button></a>
 			</p>
             </p>
 		</div>
     </div>
+	</div>
 	<hr>
+	<div class="box">
 	<div class="row">
 	    <div class="col-sm-6">
 		    <p class="explore">My<b id="explore_bold" > Applications </b> and Programs<br>
 			<p class="explore-p">
-			Know about some applications and programs made by me...<br>
-			<a href="applications.php"><button class="btn btn-primary">Go >></button></a>
+			Know about some applications and programs made by me...<br><br>
+			<a href="applications.php"><button class="btn btn-warning">Applications</button></a>
 			</p>
             </p>
 		</div>
@@ -240,7 +248,9 @@ Categories
 		    </div>
 		</div>
     </div>
+	</div>
 	<hr>
+	<div class="box">
 	<div class="row">
 	    <div class="col-sm-6">
 		    <div class="explore-img">
@@ -250,19 +260,21 @@ Categories
 		<div class="col-sm-6">
 		    <p class="explore">Get <b id="explore_bold" >Tips </b>and Amazing Facts<br>
 			<p class="explore-p">
-			Get interesting tips and amazing facts based on daily activity.<br>
-			<a href="tips.php"><button class="btn btn-primary">Go <<</button></a>
+			Get interesting tips and amazing facts based on daily activity.<br><br>
+			<a href="tips.php"><button class="btn btn-warning">Tips and Facts</button></a>
 			</p>
             </p>
 		</div>
     </div>
+	</div>
 	<hr>
+	<div class="box">
 		<div class="row">
 	    <div class="col-sm-6">
 		    <p class="explore">Get <b id="explore_bold" >Entaining </b>Contents <br>
 			<p class="explore-p">
-			Read funny and intresting contents, from multiple platform...<br>
-			<a href="entainment.php"><button class="btn btn-primary">Go >></button></a>
+			Read funny and intresting contents, from multiple platform...<br><br>
+			<a href="entainment.php"><button class="btn btn-warning">Entertaining Contents</button></a>
 			</p>
             </p>
 		</div>
@@ -272,6 +284,7 @@ Categories
 		    </div>
 		</div>
     </div>
+	</div>
 	<hr>
 </div>
 <div class="bottom">
