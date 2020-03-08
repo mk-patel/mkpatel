@@ -25,7 +25,7 @@ if(isset($_POST["submit"]))
 	{
         session_start();
 		$_SESSION["password"]=$pw;
-		header("Location: projects.php");
+		header("Location: applicatiots.php");
 	}
 	else
 	{
