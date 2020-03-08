@@ -159,7 +159,7 @@ Log Out
 </header>
 <div class="container">
     <div class="row">
-         <img class="img-fluid" src="images/apppp.jpg">
+         <img class="img-fluid" src="images/appppp.jpg">
 		</div>
 	
 	<div class="row">
