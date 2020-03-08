@@ -169,29 +169,17 @@ Log Out
 			I hope you will like my hardwork. Thank You!</b>
 			</p>
 		</div>
-		<div class="row">
-  <div class="col-md-2">
-    <div class="thumbnail">
-      <a href="#">
-        <img  class="img-thumbnail" src="images/mor.jpg" alt="Mor Gaon - My Evillage" style="width:100%">
+	<div class="row">
+	<div class="caption">
+			<img  class="img-thumbnail" src="images/mor.jpg" alt="Mor Gaon - My Evillage" style="width:150px;height:150px;">
+             <p>Mor Gaon ( <a href="https://www.github.com/mk-patel/morgaon">Source Code - GitHub</a> )</p>
+            </div>
+        
         <div class="caption">
-          <p>Mor Gaon ( <a href="https://www.github.com/mk-patel/morgaon">Source Code - GitHub</a> )</p>
-        </div>
-      </a>
-    </div>
-  </div>
-  <div class="col-md-2">
-    <div class="thumbnail">
-      <a href="#">
-        <img class="img-thumbnail" src="images/mkp.jpg" alt="MKPATEL - The Intro" style="width:100%">
-        <div class="caption">
+		<img  class="img-thumbnail" src="images/mkp.jpg" alt="MKPATEL - The Intro" style="width:150px;height:150px;">
           <p>MKPATEL</p>
         </div>
-      </a>
     </div>
-  </div>
-    </div>
-    
 	<hr>
 	<div class="pro-manage">
     <div class="row">
