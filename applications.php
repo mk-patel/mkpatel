@@ -1,3 +1,21 @@
+<?php
+session_start();
+$password=$_SESSION["password"];
+if(empty($password)){
+       header("location: login.php");
+         exit();
+	    }
+	else{
+        if ($_SESSION["password"] == "eb51e8d5f7832dda80be1baef97c8f8c3034407e")
+	    {
+	    }
+		else{
+		header("location: login.php");
+        exit();
+	    }
+	}
+	
+?>
 <html>
 <head>
   <title>Manish Patel</title>
@@ -7,16 +25,17 @@
     <meta name="author" content="Manish Patel">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="icon" type="image/png" href="11.png"/>
+    <link href="https://fonts.googleapis.com/css?family=Oxanium|Work+Sans&display=swap" rel="stylesheet">
+	<link rel="icon" type="image/png" href="11.png"/>
 <style>
 body{
 background:white;
-font-family:sans-serif;
+font-family: 'Work Sans', sans-serif;
 }
 header{
 width:100%;
 height:40px;
-background:grey;
+background:#9ade4b;
 }
 .header-img{
 float:left;
@@ -99,8 +118,13 @@ width:130px;
 height:130px;
 }
 .pr-p{
-	color:black;
-	margin-left:20px;
+	color:#8f3903;
+	text-align:center;
+	font-size:17px;
+	padding:30px;
+}
+.into-img{
+	margin-bottom:10px;
 }
 .into-img img{
 width:220px;
@@ -113,6 +137,13 @@ margin-left:35px;
 	text-align:center;
 	padding:3px;
 }
+.caption a{
+	color:black;
+}
+.pro-manage
+{
+	box-shadow:2px 2px 10px 1px rgba(0,0,0,0.3);
+}
 </style>
 </head>
 <body>
@@ -121,44 +152,30 @@ margin-left:35px;
 <img src="images/mp.jpg"> &nbsp;MKPATEL
 </div>
 <div class="header-content">
-<button id="category" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
-Categories
-</button>
-<ul class="dropdown-menu">         
-
-   <li><a class="dropdown-item" href="projects.php">My Projects</a></li>
-   <li class="divider"></li>
-   <li><a class="dropdown-item" href="applications.php">My Application</a></li>
-   <li class="divider"></li>
-   <li><a class="dropdown-item" href="tips.php">Tips</a></li>
-   <li class="divider"></li>
-   <li><a class="dropdown-item" href="entertainment.php">Entertainment</a></li>
-   <li class="divider"></li>
-   <li><a class="dropdown-item" href="index.html">Home</a></li>
-
- 
-</ul>
+<a href="logout.php"><button id="category" type="button" class="btn btn-warning">
+Log Out
+</button></a>
 </div>
 </header>
 <div class="container">
     <div class="row">
-         <img class="img-fluid" src="images/appp.jpg">
+         <img class="img-fluid" src="images/apppp.jpg">
 		</div>
 	
 	<div class="row">
-		    <p class="pr-p">Some applications and programs are here 
-			which shows my knowledge and skill.<br>
-			These apps and programs are made by  me only.<br>
-			I hope you will like my hardwork. Thank You!
+		    <p class="pr-p"><b>Some applications and programs are here 
+			which shows my knowledge and skill.
+			These apps and programs are made by me only.<br>
+			I hope you will like my hardwork. Thank You!</b>
 			</p>
 		</div>
 		<div class="row">
   <div class="col-md-2">
     <div class="thumbnail">
-      <a href="morgaon/home.php">
+      <a href="#">
         <img  class="img-thumbnail" src="images/mor.jpg" alt="Mor Gaon - My Evillage" style="width:100%">
         <div class="caption">
-          <p>Mor Gaon</p>
+          <p>Mor Gaon ( <a href="https://www.github.com/mk-patel/morgaon">Source Code - GitHub</a> )</p>
         </div>
       </a>
     </div>
@@ -176,25 +193,27 @@ Categories
     </div>
     
 	<hr>
+	<div class="pro-manage">
     <div class="row">
-	    <h3  style="font-weight:700;color:purple;margin-left:10px;padding:5px;">
+	    <h3  style="font-weight:700;color:purple;margin-left:20px;padding:15px;">
 		Mor Gaon - My Evillage
 		</h3>
-		<p style="color:grey;margin-left:40px;">It Connect all the villages with each other through technology.</span><br><br>
-        It is a website which provides the facility to share the activities of village like events, what happpening in village  etc.
+		<p style="color:grey;margin-left:40px;margin-right:40px;">
+		Aim Of the Project - <span style="color:black;">Connect all the villages with each other through technology.</span><br><br>
+        It is a website which provides the facility to 
+		share the activities of village like events, what happpening in village  etc.
 		It providse realtime news of the villages.
-		it is also provide the users 'profile management facility' like create, update and upload their information on site.
+		it is also provide the users 'profile management facility' like create, update and upload their information on site.  ( <a href="https://www.github.com/mk-patel/morgaon">Source Code - GitHub</a> )
 </p>
 </div>
+
 <div class="row">
 		<div class="into-img">
-        <img src="images/morgaonproject.jpeg">
+        <img class="img-thumbnail" src="images/morgaonproject.jpeg">
 		</div>
     </div>
+	</div>
 	<hr>
-	<div class="row">
-	    <p class="pr-p">Multiple projects and tasks will be taken further...ThankYou!
-    </div>
 </div>
 <div class="bottom">
 <div class="btm-elm">
