@@ -7,11 +7,12 @@
     <meta name="author" content="Manish Patel">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="UTF-8">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Oxanium|Work+Sans&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <style>
 body{
 background:white;
-font-family:sans-serif;
+font-family: 'Work Sans', sans-serif;
 }
 header{
 width:100%;
@@ -95,14 +96,30 @@ Categories
 </div>
 </header>
 <br>
-<?php
-?>
+
   <div class="container">
 Suggessions & Feedback
 <hr style="border:2px solid green">
   </div>
 
-	 
+	 <?php
+require 'db.php';
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+	$title = $mysqli->real_escape_string($_POST['name']);
+	$content = $mysqli->real_escape_string($_POST['content']);
+    $mobile = $mysqli->real_escape_string($_POST['mobile']);
+	$dt2=date("Y-m-d H:i:s");
+		
+	$sql = "INSERT INTO users(name,post,mobile,date)"
+                    . "VALUES('$title','$content','$mobile','$dt2')";	
+	mysqli_query($conn,$sql);
+    echo "<br>";
+    echo "<center style='color:green;'>Thankyou For Your Feedback.</center>";	
+    echo "<br>";
+    echo "<br>";
+}
+
+?>
 
 <div class="d-flex justify-content-center">
 <div class="container">
@@ -133,5 +150,6 @@ Suggessions & Feedback
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </body>
 </html>
