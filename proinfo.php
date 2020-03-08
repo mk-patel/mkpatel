@@ -1,3 +1,21 @@
+<?php
+session_start();
+$password=$_SESSION["password"];
+if(empty($password)){
+       header("location: login.php");
+         exit();
+	    }
+	else{
+        if ($_SESSION["password"] == "5547e63e1a724ea0b42b8d6b79f6a0c243665f55")
+	    {
+	    }
+		else{
+		header("location: login.php");
+        exit();
+	    }
+	}
+	
+?>
 <html>
 <head>
   <title>Manish Patel</title>
@@ -7,16 +25,17 @@
     <meta name="author" content="Manish Patel">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="icon" type="image/png" href="11.png"/>
+    <link href="https://fonts.googleapis.com/css?family=Oxanium|Work+Sans&display=swap" rel="stylesheet">
+	<link rel="icon" type="image/png" href="11.png"/>
 <style>
 body{
     background:white;
-    font-family:;
+    font-family: 'Work Sans', sans-serif;
 }
 header{
     width:100%;
     height:40px;
-    background:grey;
+    background:#00d0ff;
 }
 .header-img{
     float:left;
@@ -60,7 +79,7 @@ header{
 .btn{
     font-size:12px;
     font-weight:700;
-    padding:0px;
+    padding:2px;
 }
 .heading
 {
@@ -69,7 +88,7 @@ header{
 .btn{
     font-size:12px;
     font-weight:700;
-    padding:8px;
+    padding:10px;
 }
 .heading
 {
@@ -146,29 +165,15 @@ text-align:center;
 <img src="images/mp.jpg"> &nbsp;MKPATEL
 </div>
 <div class="header-content">
-<button id="category" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
-Categories
-</button>
-<ul class="dropdown-menu">         
-
-   <li><a class="dropdown-item" href="projects.php">My Projects</a></li>
-   <li class="divider"></li>
-   <li><a class="dropdown-item" href="applications.php">My Application</a></li>
-   <li class="divider"></li>
-   <li><a class="dropdown-item" href="tips.php">Tips</a></li>
-   <li class="divider"></li>
-   <li><a class="dropdown-item" href="entertainment.php">Entertainment</a></li>
-   <li class="divider"></li>
-   <li><a class="dropdown-item" href="index.html">Home</a></li>
-
- 
-</ul>
+<a href="logout.php"><button id="category" type="button" class="btn btn-secondary">
+Log Out
+</button></a>
 </div>
 </header>
 <div class="container" id="hide">
     <div class="row">
 	    <div class="col-sm-6">
-		<h1 class="heading">Manish Patel</h1>
+		<h1 class="heading"><b>Manish Patel</b></h1>
 		<p class="heading_info">
 		LinkedIn : <a href="https://www.linkedin.com/in/manish-patel-mkp/" style="text-style:none;color:grey;">https://www.linkedin.com/in/manish-patel-mkp</a><br>
 		Email : manishkp399@gmail.com<br>
@@ -231,7 +236,7 @@ Categories
 	<div class="sub_headind_info">
 	<p>&nbsp; &nbsp; &nbsp; Projects that have been created only by me :
 	<ul>
-        <li> Mor Gaon - My Evillage ( <a href="morgaon/home.php">Click To See Demo</a> )</li>
+        <li> Mor Gaon - My Evillage ( <a href="https://www.github.com/mk-patel/morgaon">Source Code - GitHub</a> )</li>
         <li> Multipurpose Electronic Kit</li>
         <li> MKPATEL - The Intro.</li>
     </ul>
