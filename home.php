@@ -1,61 +1,44 @@
 <?php
+include('db.php');
 include('config.php');
-
-if(isset($_GET["code"]))
-{
-
- $token = $google_client->fetchAccessTokenWithAuthCode($_GET["code"]);
-
-
- if(!isset($token['error']))
- {
- 
-  $google_client->setAccessToken($token['access_token']);
-
- 
-  $_SESSION['access_token'] = $token['access_token'];
-
-
-  $google_service = new Google_Service_Oauth2($google_client);
-
- 
-  $data = $google_service->userinfo->get();
-
- 
-  if(!empty($data['given_name']))
-  {
-   $_SESSION['user_first_name'] = $data['given_name'];
-  }
-
-  if(!empty($data['family_name']))
-  {
-   $_SESSION['user_last_name'] = $data['family_name'];
-  }
-
-  if(!empty($data['email']))
-  {
-   $_SESSION['user_email_address'] = $data['email'];
-  }
-
-  if(!empty($data['gender']))
-  {
-   $_SESSION['user_gender'] = $data['gender'];
-  }
-
-  if(!empty($data['picture']))
-  {
-   $_SESSION['user_image'] = $data['picture'];
-  }
- }
+if(isset($_GET["code"])){
+ 	$token = $google_client->fetchAccessTokenWithAuthCode($_GET["code"]);
+ 	if(!isset($token['error'])){
+		$google_client->setAccessToken($token['access_token']);
+		$_SESSION['access_token'] = $token['access_token'];
+		$google_service = new Google_Service_Oauth2($google_client);
+		$data = $google_service->userinfo->get();
+		if(!empty($data['given_name'])){
+			$_SESSION['user_first_name'] = $data['given_name'];
+		}
+		if(!empty($data['family_name'])){
+			$_SESSION['user_last_name'] = $data['family_name'];
+		}
+		if(!empty($data['email'])){
+			$_SESSION['user_email_address'] = $data['email'];
+		}
+		if(!empty($data['gender'])){
+			$_SESSION['user_gender'] = $data['gender'];
+		}
+		if(!empty($data['picture'])){
+			$_SESSION['user_image'] = $data['picture'];
+		}
+ 	}
 }
-if(!isset($_SESSION['access_token']))
-{
-header('location:index.php');
+if(!isset($_SESSION['access_token'])){
+	header('location:index.php');
 }
-$nm=$_SESSION['user_first_name'];
-$ln=$_SESSION['user_last_name'];
-$img=$_SESSION["user_image"];
-$em=$_SESSION['user_email_address'];
+$nm = $_SESSION['user_first_name'];
+$ln = $_SESSION['user_last_name'];
+$img = $_SESSION["user_image"];
+$em = $_SESSION['user_email_address'];
+$query =  "select email from uforu where email='$em'";
+$result = mysqli_query($conn, $query);
+$resultCheck = mysqli_num_rows($result);
+if($resultCheck == 0){
+	$query =  "INSERT INTO uforu (f_name,l_name,email,gender,enable_ml) VALUES ('$nm', '$ln', '$em', 'NA','off')";
+	$result = mysqli_query($conn, $query);
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -68,106 +51,10 @@ $em=$_SESSION['user_email_address'];
 		<meta property="og:description" content="This is Manish, demonstratingand applying his knowledge to discover and invent problem soliving products for human help.">
 		<meta name="keywords" content="manish patel,manish kumar,mkp,mpatel,problem solver,believes in application knowledge">
 		<meta name="author" content="Manish Patel">
-		<link rel="stylesheet" type="text/css" href="header.css"/>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 		<link href="https://fonts.googleapis.com/css?family=Oxanium|Work+Sans&display=swap" rel="stylesheet">
-		<style>
-			.row{
-				margin-top:10px;
-				margin-left:10px;
-				margin-right:10px;
-			}
-			.into-img{
-				text-align:center;
-			}
-			.col-sm-6 img{
-				width:190px;
-				height:200px;
-			}
-			.col-sm-6 h1{
-				font-size:16px;
-				color:grey;
-				padding:5px;
-				margin-top:20px;
-			}
-			#intro-wlcm{
-				font-size:12px;
-			}
-			#name_tag_bold{
-				color:#19566b;
-				font-size:30px;
-			}
-			.intro-p{
-				font-size:15px;
-				color:black;
-				padding:0px;
-				margin-left:30px;
-			}
-			#into-first-line{
-				font-size:14px;
-			}
-			.intro-more{
-				margin-left:30px;
-			}
-			.explore-img{
-				text-align:center;
-			}
-			.explore{
-				text-align:center;
-				color:black;
-				margin-top:10px;
-				font-weight:700;
-			}
-			#explore_bold{
-				font-size:25px;
-				color:#19566b;
-				text-align:center;
-			}
-			.explore-p{
-				font-size:15px;
-				color:grey;
-				text-align:center;
-				margin-left:10px;
-				margin-right:10px;
-			}
-			.explore-img img{
-				width:120px;
-				height:120px;
-				margin-top:20px;
-			}
-			.btn{
-				font-size:13px;
-				font-weight:700;
-				padding:5px;
-			}
-			.explore-img img:hover{
-				border:8px solid white;
-				border-radius:5px;
-			}
-			.explore-p:hover{
-				color:black;
-			}
-			.intro-more a{
-				font-size:12px;
-				color:grey;
-			}
-			.box:hover {
-				box-shadow:2px 2px 10px 1px rgba(0,0,0,0.1);
-			}
-			.ai-intro{
-				font-size:18px;
-				color:rgb(14, 49, 100);
-				margin-top:15px;
-				margin-left:15px;
-				padding:7px;
-				font-weight:600;
-			}
-			@media screen and (max-width:700px){
-				.box {
-					box-shadow:2px 2px 10px 1px rgba(0,0,0,0.1);
-				}
-			}
-		</style>
+		<link rel="stylesheet" type="text/css" href="header.css"/>
+		<link rel="stylesheet" type="text/css" href="home.css"/>
 	</head>
 	<body>
 		<header class="d-flex justify-content-between bg-info">
@@ -175,7 +62,7 @@ $em=$_SESSION['user_email_address'];
 				Mkpatel&nbsp;
 			</div>
 			<div class="header-pg-title">
-				<b style="color:black;"><?php echo $nm; ?> Welcome !</b>
+				<b style="color:black;">Welcome <?php echo $nm; ?>!</b>
 			</div>
 			<div class="header-content">
 				<button id="category" type="button" class="btn bg-info" data-toggle="dropdown">Menu</button>
@@ -187,6 +74,8 @@ $em=$_SESSION['user_email_address'];
 					<li><a class="dropdown-item" href="aiarea.php">AI Area</a></li>
 					<li class="divider"></li>
 					<li><a class="dropdown-item" href="feedback.php">Feedback</a></li>
+					<li class="divider"></li>
+					<li><a class="dropdown-item" href="logout.php">Logout</a></li>
 				</ul>
 			</div>
 		</header>
@@ -252,7 +141,7 @@ $em=$_SESSION['user_email_address'];
 						</div>
 					</div>
 					<div class="col-sm-6">
-						<p class="explore">Explore <b id="explore_bold" > AI Area</b><br>
+						<p class="explore"><b id="explore_bold" > AI Area</b><br>
 							<p class="explore-p">
 								Enjoy the wonderful part of the technical world.<br><br>
 								<a href="aiarea.php"><button class="btn btn-info">In Progress...</button></a>
