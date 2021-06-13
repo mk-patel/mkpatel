@@ -4,7 +4,7 @@
 		<meta name="viewport" content="initial-scale=1, minimum-scale=1, width=device-width">
 		<meta name="theme-color" content="#f2fbff" />
 		<title>Manish Patel - Suggessions & Feedback</title>
-		<meta property="og:title" content="Manish Patel - Believes in Application Knowledge">
+		<meta property="og:title" content="Manish Patel - Suggessions & Feedbac">
 		<meta name="description" content="This is Manish, demonstratingand applying his knowledge to discover and invent problem soliving products for human help.">
 		<meta property="og:description" content="This is Manish, demonstratingand applying his knowledge to discover and invent problem soliving products for human help.">
 		<meta name="keywords" content="manish patel,manish kumar,mkp,mpatel,problem solver,believes in application knowledge">
@@ -85,6 +85,26 @@
 		</div>
 		<div class="middle-bg">
 			<div class="container">
+			<?php
+			require '../control/db.php';
+			// Setting up time zone.
+			date_default_timezone_set('Asia/Calcutta');
+			$date=date("d M Y");
+			if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+				$title = $mysqli->real_escape_string($_POST['name']);
+				$content = $mysqli->real_escape_string($_POST['content']);
+				$mobile = $mysqli->real_escape_string($_POST['mobile']);
+					
+				$sql = "INSERT INTO feedback(name,data,mobile,date)"
+								. "VALUES('$title','$content','$mobile','$date')";	
+				mysqli_query($conn,$sql);
+				echo "<br>";
+				echo "<center style='color:green;'>Thankyou For Your Feedback.</center>";	
+				echo "<br>";
+				echo "<br>";
+				echo "<br>";
+			}
+			?>
 				<div class="form-field">
 					<form class="form" action="feedback.php" method="post" enctype="multipart/form-data" autocomplete="off">
 						<div class="form-group">
@@ -109,22 +129,3 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	</body>
 </html>
-
-<?php
-require 'db.php';
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	$title = $mysqli->real_escape_string($_POST['name']);
-	$content = $mysqli->real_escape_string($_POST['content']);
-    $mobile = $mysqli->real_escape_string($_POST['mobile']);
-	$dt2=date("Y-m-d H:i:s");
-		
-	$sql = "INSERT INTO users(name,post,mobile,date)"
-                    . "VALUES('$title','$content','$mobile','$dt2')";	
-	mysqli_query($conn,$sql);
-    echo "<br>";
-    echo "<center style='color:green;'>Thankyou For Your Feedback.</center>";	
-    echo "<br>";
-    echo "<br>";echo "<br>";
-}
-
-?>
