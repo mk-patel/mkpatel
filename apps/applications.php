@@ -1,22 +1,3 @@
-<?php
-/*session_start();
-$password=$_SESSION["password"];
-if(empty($password)){
-       header("location: login.php");
-         exit();
-	    }
-	else{
-        if ($_SESSION["password"] == "222")
-	    {
-	    }
-		else{
-		header("location: login.php");
-        exit();
-	    }
-	}
-	*/
-?>
-
 <html>
 <head>
     <meta charset="utf-8">
@@ -68,6 +49,13 @@ if(empty($password)){
 		margin-left:25px;
 		padding: 10px;
 	}
+	.pr-img{
+		text-align:center;
+	}
+	.pr-img img{
+		width:200px;
+		height:auto;
+	}
 	.morgaon-heading{
 		color:black;
 		font-size:20px;
@@ -107,13 +95,46 @@ if(empty($password)){
 		 margin-right:50px;
 		 padding:7px;
 	}
-	.pro-manage ul{
-		 margin-top:20px;
-	}
-	.pro-manage ul li{
+	.pro-manage p a{
 		 color:grey;
-		 margin-left:40px;
-		 margin-right:40px;
+	}
+	@media screen and (max-width:700px){
+		.pr{
+			margin-top:20px;
+			color:#050c3b;
+			width:100%;
+			padding:10px;
+			text-align:center;
+			margin-left:0px;
+		}
+		.pr-p{
+			color:#050c3b;
+			font-size:15px;
+			padding: 10px;
+			text-align:center;
+			margin-left:0px;
+		}
+		.pro-manage h4{
+			font-weight:700;
+			margin-left:10px;
+			padding:30px;
+			color:#19566b;
+			font-size:18px;
+		}
+		.pro-manage h5{
+			color:black;
+			font-weight:500;
+			margin-left:40px;
+			margin-right:30px;
+			font-size:16px;
+		}
+		.pro-manage p{
+			 color:grey;
+			 margin-left:40px;
+			 margin-right:50px;
+			 padding:7px;
+			 font-size:14px;
+		}
 	}
 	</style>
 </head>
@@ -133,10 +154,17 @@ if(empty($password)){
 		</header>
 		<div class="container">
 			<div class="row">
-				<h2 class="pr">Applications & Programs</h2>
-				<p class="pr-p">
-					Applications and programs which has been created by me.
-				</p>
+				<div class="col-sm-6">
+					<h2 class="pr">Applications & Programs</h2>
+					<p class="pr-p">
+						Applications and programs which has been created by me.
+					</p>
+				</div>
+				<div class="col-sm-6">
+					<div class="pr-img">
+						<img src="../sys_images/app.png"/>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -145,13 +173,16 @@ if(empty($password)){
 			<div class="pro-manage">
 				<h4>
 					On Mock - Learn & Apply
-					<p style="color:grey;font-size:15px;margin-left:5px;">Developer Name - Manish Official</p>
+					<p style="color:grey;font-size:14px;margin-left:5px;">Developer Name - Manish Official</p>
 				</h4>
-				<h5>This project is mainly based on Education Application which provides notes and also takes test of the student. Here the user/student can evaluate their exam skills.</h5><br/>
+				<h5>This App is mainly based on Education Application which provides notes and also takes test of the student. Here the user/student can evaluate their exam skills.</h5><br/>
 				<p>
 					App link - <a href="https://play.google.com/store/apps/details?id=com.testqom">https://play.google.com/store/apps/details?id=com.testqom</a>
 				</p>
-				<p style="font-size:16px;font-weight:700;border:1px solid grey;padding:10px;width:150px;border-radius:10px;background:lightblue;"><a style="color:black;" href="../projects/projects.php">See More Details</a></p><br/>
+				<p>
+					<button class="btn btn-info"><a style="color:white" href="../projects/projects.php">See More Details</a></button>
+				</p>
+				<br/>
 				<div class="row">
 					<div class="pro-img">
 						<a href="https://play.google.com/store/apps/details?id=com.testqom"><img class="img-thumbnail" src="../sys_images/onmock-logo.jpg"> <img class="img-thumbnail" src="../sys_images/play-store.png"></a>
@@ -164,17 +195,20 @@ if(empty($password)){
 				CL SALES - Quaulity Products
 				<p style="color:grey;font-size:15px;margin-left:5px;">Created By - Manish Patel</p>
 				</h4>
-				<h5>This project is mainly based on E-Commerce category which displays their shop’s products for their user.<br/>
+				<h5>This website is mainly based on E-Commerce category which displays their shop’s products for their user.<br/>
 					User can easily place their order through this website.
 				</h5>
 				<p>
 					Website link - <a href="http://www.clsales.in">http://www.clsales.in</a>
 				</p>
 				<br/>
-				<p style="font-size:16px;font-weight:700;border:1px solid grey;padding:10px;width:150px;border-radius:10px;background:lightblue;"><a style="color:black;" href="../projects/projects.php">See More Details</a></p><br/>
+				<p>
+					<button class="btn btn-info"><a style="color:white" href="../projects/projects.php">See More Details</a></button>
+				</p>	
+				<br/>
 				<div class="row">
 					<div class="pro-img">
-						<a href="http://www.clsales.in"><img class="img-thumbnail" src="../sys_images/clsales-logo.png"><img class="img-thumbnail" src="../sys_images/goto-url.png">
+						<a href="http://www.clsales.in"><img class="img-thumbnail" src="../sys_images/clsales-logo.png"><img class="img-thumbnail" src="../sys_images/goto-url.png"></a>
 					</div>
 				</div>
 			</div>
