@@ -77,5 +77,8 @@
 				</tbody>
 			</table>
 		</div>
+		<div class="mt-5 p-3 bg-light">
+		<a class="text-dark h6" href="about.html">About Developer</a>
+		</div>
 	</body>
 </html>
